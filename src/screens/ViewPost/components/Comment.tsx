@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
+import { capitalize } from "../../../helpers/helpers";
 import { CommentData } from "../../../helpers/types";
 
 interface CommentProps {
@@ -10,13 +11,13 @@ const Comment = ({ comment }: CommentProps) => {
         <View style={styles.container}>
             <View style={styles.commentHeader}>
                 <Text style={[styles.text, { textAlign: "left" }]}>
-                    {comment.name}
+                    {capitalize(comment.name)}
                 </Text>
                 <Text style={[styles.text, { textAlign: "right" }]}>
                     {comment.email}
                 </Text>
             </View>
-            <Text style={styles.bodyText}>{comment.body}</Text>
+            <Text style={styles.bodyText}>{capitalize(comment.body)}</Text>
         </View>
     );
 };
@@ -26,9 +27,10 @@ export default Comment;
 const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
-        backgroundColor: "#A4C3B2",
+        backgroundColor: "#CCE3DE",
         justifyContent: "center",
         paddingHorizontal: 10,
+        elevation: 2,
     },
     commentHeader: {
         flexDirection: "row",

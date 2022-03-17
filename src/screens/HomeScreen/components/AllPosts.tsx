@@ -1,8 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
-import { View, StyleSheet, FlatList, ActivityIndicator } from "react-native";
+import { View, FlatList, ActivityIndicator } from "react-native";
 import { RootStackParamList } from "../../../../App";
+import { capitalize } from "../../../helpers/helpers";
 import { PostData } from "../../../helpers/types";
 import Post from "./Post";
 
@@ -20,20 +21,21 @@ const AllPosts = ({ posts }: AllPostsProps) => {
                     keyExtractor={(post) => `${post.id}`}
                     renderItem={(post) => (
                         <Post
-                            title={post.item.title}
+                            title={capitalize(post.item.title)}
                             onPressPost={() =>
                                 navigation.navigate("ViewPost", {
                                     post: post.item,
                                 })
                             }
+                            index={post.index}
                         />
                     )}
                     ItemSeparatorComponent={() => (
-                        <View style={{ marginVertical: 5 }} />
+                        <View style={{ marginVertical: 10 }} />
                     )}
-                    contentContainerStyle={{ paddingBottom: 10 }}
+                    contentContainerStyle={{ paddingBottom: 20 }}
                     ListHeaderComponent={() => (
-                        <View style={{ marginTop: 10 }} />
+                        <View style={{ marginTop: 20 }} />
                     )}
                     showsHorizontalScrollIndicator={false}
                     showsVerticalScrollIndicator={false}
@@ -50,5 +52,3 @@ const AllPosts = ({ posts }: AllPostsProps) => {
 };
 
 export default AllPosts;
-
-const styles = StyleSheet.create({});

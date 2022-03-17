@@ -24,7 +24,7 @@ const CommentSection = ({ comments }: CommentSectionProps) => {
                     keyExtractor={(comment) => `${comment.id}`}
                     renderItem={(comment) => <Comment comment={comment.item} />}
                     ItemSeparatorComponent={() => (
-                        <View style={{ marginVertical: 5 }} />
+                        <View style={{ marginVertical: 10 }} />
                     )}
                     contentContainerStyle={{ paddingBottom: 10 }}
                     ListHeaderComponent={() => (
@@ -53,11 +53,16 @@ const styles = StyleSheet.create({
     container: {
         height: 300,
         backgroundColor: "#EAF4F4",
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
+        elevation: 20,
     },
-    commentSectionTitleContainer: { alignItems: "center" },
+    commentSectionTitleContainer: {
+        alignItems: "center",
+        paddingTop: 20,
+        paddingBottom: 10,
+    },
     commentSectionTitle: {
         fontSize: 20,
         fontWeight: "bold",
