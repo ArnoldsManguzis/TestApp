@@ -7,7 +7,7 @@ interface PostContainerProps {
 }
 const PostContainer = ({ title, body }: PostContainerProps) => {
     return (
-        <View style={{ flex: 1, paddingHorizontal: 10 }}>
+        <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             <ScrollView style={{ flex: 1 }}>
                 <Text style={styles.body}>{body}</Text>
@@ -19,6 +19,7 @@ const PostContainer = ({ title, body }: PostContainerProps) => {
 export default PostContainer;
 
 const styles = StyleSheet.create({
+    container: { flex: 1, paddingHorizontal: 10 },
     title: {
         fontSize: 18,
         fontWeight: "bold",
