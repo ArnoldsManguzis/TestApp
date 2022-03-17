@@ -1,0 +1,6 @@
+module Pods_LevaClinicTestApp_LevaClinicTestAppTests {
+  umbrella header "Pods-LevaClinicTestApp-LevaClinicTestAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
