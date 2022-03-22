@@ -1,1 +1,1 @@
-LevaClinicTestApp
+TestApp
